@@ -49,6 +49,19 @@ public class TicTacToeView extends AppCompatActivity {
         // INSERT YOUR CODE HERE
         //
 
+        TicTacToeSquare square;
+        for(int i=0; i<size; i++) {
+
+            for (int j = 0; j < size; j++) {
+                square= new TicTacToeSquare(i,j);
+
+                TextView squares = (TextView)findViewById(getSquareId(square));
+
+                squares.setText("");
+
+            }
+        }
+
     }
 
     public void modelPropertyChange(final PropertyChangeEvent e) {
