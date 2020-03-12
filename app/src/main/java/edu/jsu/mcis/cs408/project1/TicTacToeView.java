@@ -47,7 +47,7 @@ public class TicTacToeView extends AppCompatActivity {
 
         //
         // INSERT YOUR CODE HERE
-        //
+        //DONR
 
         TicTacToeSquare square;
         for(int i=0; i<size; i++) {
@@ -55,9 +55,9 @@ public class TicTacToeView extends AppCompatActivity {
             for (int j = 0; j < size; j++) {
                 square= new TicTacToeSquare(i,j);
 
-                TextView squares = (TextView)findViewById(getSquareId(square));
+                TextView gridSquares = (TextView)findViewById(getSquareId(square));
 
-                squares.setText("");
+                gridSquares.setText("");
 
             }
         }
@@ -87,6 +87,11 @@ public class TicTacToeView extends AppCompatActivity {
                 //
                 // INSERT YOUR CODE HERE
                 //
+                TicTacToeSquare square = (TicTacToeSquare) propertyValue;
+                //controller.getMarkAsString(square);
+                //update the view
+                TextView updatedSquare = (TextView)findViewById(getSquareId(square));
+                updatedSquare.setText(controller.getMarkAsString(square));
 
             }
 
@@ -135,7 +140,14 @@ public class TicTacToeView extends AppCompatActivity {
         //
         // INSERT YOUR CODE HERE
         //
+        //get last 2 characters of field, the nput them into an int, then make those the row and columns
+        String rowAndColNums =name.substring(name.length() - 2);
+        //integer.parseint(string)
 
+        int row= Integer.parseInt(rowAndColNums.substring(0,1));
+        int col= Integer.parseInt(rowAndColNums.substring(1,2));
+        TicTacToeSquare square = new TicTacToeSquare(row,col);
+        controller.processInput(square);
     }
 
     public void setResult(String text) {

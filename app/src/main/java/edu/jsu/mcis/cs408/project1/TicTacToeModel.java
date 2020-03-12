@@ -100,8 +100,8 @@ public class TicTacToeModel {
     private boolean isValidSquare(int row, int col) {
 
         // This method should return TRUE if the specified location is within bounds of the grid
+        //DONE
 
-        boolean square = false;
         if((row <0 ||row >=getSize()) || (col< 0 || col>=getSize())){
             return false;
 
@@ -117,6 +117,7 @@ public class TicTacToeModel {
     private boolean isSquareMarked(int row, int col) {
 
         // This method should return TRUE if the square at the specified location is already marked
+        //DONE
         if (!grid[row][col].equals(Mark.EMPTY)) {return true;}
 
         else{ return false;} // this is a stub; delete it later!
@@ -137,7 +138,7 @@ public class TicTacToeModel {
         // This method should return a Result value indicating the current state of the game.  It
         // should use "isMarkWin()" to see if X or O is the winner, and "isTie()" to see if the game
         // is a TIE.  If neither condition applies, return a default value of NONE.
-        //
+        //DONE
 
 
         if(isMarkWin(Mark.X)){
@@ -163,7 +164,7 @@ public class TicTacToeModel {
         // This method should check the squares of the grid to see if the specified Mark is the
         // winner.  (Hint: this method must check for complete rows, columns, and diagonals, using
         // an algorithm which will work for all possible grid sizes!)
-        //
+        //DONE
 
 
         boolean diagonalONE = true;
@@ -203,7 +204,7 @@ public class TicTacToeModel {
     }
 
     private boolean isTie() {
-
+    //DONE
         boolean isMarked = false;
 
         for(int i=0; i<getSize(); i++){
