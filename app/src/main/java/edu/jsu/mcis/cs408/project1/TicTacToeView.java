@@ -45,10 +45,7 @@ public class TicTacToeView extends AppCompatActivity {
 
         setResult( getResources().getString(R.string.welcome) );
 
-        //
-        // INSERT YOUR CODE HERE
-        //DONR
-
+        //Resets all squares to Mark.EMPTY
         TicTacToeSquare square;
         for(int i=0; i<size; i++) {
 
@@ -83,13 +80,8 @@ public class TicTacToeView extends AppCompatActivity {
              (propertyName.equals(TicTacToeController.SET_SQUARE_O)) ) {
 
             if (propertyValue instanceof TicTacToeSquare) {
-
-                //
-                // INSERT YOUR CODE HERE
-                //
+                //Takes the square, gets the ID, then updates the Screen to show X or O
                 TicTacToeSquare square = (TicTacToeSquare) propertyValue;
-                //controller.getMarkAsString(square);
-                //update the view
                 TextView updatedSquare = (TextView)findViewById(getSquareId(square));
                 updatedSquare.setText(controller.getMarkAsString(square));
 
@@ -135,15 +127,12 @@ public class TicTacToeView extends AppCompatActivity {
         //
 
         String name = getViewName(v);
-        Toast.makeText(getBaseContext(), name, Toast.LENGTH_SHORT).show(); // disable this later
+       // Toast.makeText(getBaseContext(), name, Toast.LENGTH_SHORT).show(); // disable this later
 
-        //
-        // INSERT YOUR CODE HERE
-        //
-        //get last 2 characters of field, the nput them into an int, then make those the row and columns
+       //takes the last 2 characters of name to be used as Row and Column for Square
         String rowAndColNums =name.substring(name.length() - 2);
-        //integer.parseint(string)
 
+        //gets the Row and Colun for Square, the passes the square to the Controller
         int row= Integer.parseInt(rowAndColNums.substring(0,1));
         int col= Integer.parseInt(rowAndColNums.substring(1,2));
         TicTacToeSquare square = new TicTacToeSquare(row,col);

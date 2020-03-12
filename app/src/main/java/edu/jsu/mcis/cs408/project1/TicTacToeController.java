@@ -35,9 +35,7 @@ public class TicTacToeController implements PropertyChangeListener {
 
         // setModelProperty("Mark", square);
 
-        //
-        // INSERT YOUR CODE HERE
-        // DONE
+
 
         if(model.getResult() == TicTacToeModel.Result.NONE){
            // model.setMark(square);

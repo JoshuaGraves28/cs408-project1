@@ -38,9 +38,6 @@ public class TicTacToeModel {
 
         /* Create grid (width x width) as a 2D Mark array */
 
-        //
-        // INSERT YOUR CODE HERE
-        //
         grid = new Mark[size][size];
 
         for(int i = 0; i< size; i++){
@@ -70,15 +67,13 @@ public class TicTacToeModel {
 
         int row = square.getRow();
         int col = square.getCol();
-
-        //
-        // INSERT YOUR CODE HERE
-        //
+        //Sees if the Square is Valid and not marked
         if (isValidSquare(row, col) && !isSquareMarked(row, col)) {
+
+            //sees if X or O's turn then Fires a Property Change
             if (xTurn) {
                 grid[row][col] = Mark.X;
 
-                //controller.setSquareToX or O, null, the square location
 
 
                 firePropertyChange(TicTacToeController.SET_SQUARE_X,null, new TicTacToeSquare(row,col));
@@ -117,7 +112,7 @@ public class TicTacToeModel {
     private boolean isSquareMarked(int row, int col) {
 
         // This method should return TRUE if the square at the specified location is already marked
-        //DONE
+
         if (!grid[row][col].equals(Mark.EMPTY)) {return true;}
 
         else{ return false;} // this is a stub; delete it later!
@@ -138,7 +133,7 @@ public class TicTacToeModel {
         // This method should return a Result value indicating the current state of the game.  It
         // should use "isMarkWin()" to see if X or O is the winner, and "isTie()" to see if the game
         // is a TIE.  If neither condition applies, return a default value of NONE.
-        //DONE
+
 
 
         if(isMarkWin(Mark.X)){
@@ -164,7 +159,7 @@ public class TicTacToeModel {
         // This method should check the squares of the grid to see if the specified Mark is the
         // winner.  (Hint: this method must check for complete rows, columns, and diagonals, using
         // an algorithm which will work for all possible grid sizes!)
-        //DONE
+
 
 
         boolean diagonalONE = true;
@@ -204,7 +199,7 @@ public class TicTacToeModel {
     }
 
     private boolean isTie() {
-    //DONE
+
         boolean isMarked = false;
 
         for(int i=0; i<getSize(); i++){
